@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhishGuard | Website Security</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(0, 255, 200, 0.12), transparent 30%),
+                radial-gradient(circle at 80% 80%, rgba(0, 140, 255, 0.15), transparent 30%),
+                #07111f;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAVBAR */
+        nav {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: rgba(7,17,31,0.75);
+            backdrop-filter: blur(12px);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #00e6b8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            color: #b9c5d6;
+            font-size: 14px;
+        }
+
+        .nav-links div:hover {
+            color: #00e6b8;
+        }
+
+        /* HERO */
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 30px;
+            background: rgba(0,230,184,0.08);
+            border: 1px solid rgba(0,230,184,0.25);
+            color: #00e6b8;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 52px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: #00e6b8;
+        }
+
+        .subtitle {
+            color: #9eacbd;
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        /* CARD */
+        .card {
+            margin: 45px auto 0;
+            max-width: 720px;
+            padding: 35px;
+            background: rgba(255,255,255,0.055);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 22px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+        }
+
+        .input-label {
+            text-align: left;
+            color: #cbd5e1;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 12px;
+        }
+
+        input {
+            flex: 1;
+            padding: 17px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(0,0,0,0.25);
+            color: white;
+            outline: none;
+            font-size: 15px;
+        }
+
+        input:focus {
+            border-color: #00e6b8;
+            box-shadow: 0 0 15px rgba(0,230,184,0.12);
+        }
+
+        input::placeholder {
+            color: #718096;
+        }
+
+        button {
+            padding: 0 25px;
+            border: none;
+            border-radius: 12px;
+            background: #00e6b8;
+            color: #04120f;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.25s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,230,184,0.25);
+        }
+
+        /* RESULT */
+        #result {
+            margin-top: 25px;
+            min-height: 28px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .info {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+            color: #8492a6;
+            font-size: 13px;
+        }
+
+        .info span {
+            color: #00e6b8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #627086;
+            font-size: 12px;
+        }
+
+        @media(max-width: 650px) {
+            h1 {
+                font-size: 38px;
+            }
+
+            .input-area {
+                flex-direction: column;
+            }
+
+            button {
+                padding: 15px;
+            }
+
+            .info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            Phish<span>Guard</span>
+        </div>
+
+        <div class="nav-links">
+            <div>Home</div>
+            <div>How It Works</div>
+            <div>Security</div>
+        </div>
+    </nav>
+
+    <section class="hero">
+
+        <div class="container">
+
+            <div class="badge">
+                ● AI-POWERED WEBSITE SECURITY
+            </div>
+
+            <h1>
+                Detect <span>Phishing Websites</span><br>
+                Before They Harm You
+            </h1>
+
+            <p class="subtitle">
+                Analyze website characteristics using machine learning
+                and identify potentially malicious websites in real time.
+            </p>
+
+            <div class="card">
+
+                <div class="input-label">
+                    Enter Website URL
+                </div>
+
+                <div class="input-area">
+
+                    <input
+                        type="text"
+                        id="url"
+                        placeholder="https://example.com"
+                    >
+
+                    <button onclick="checkWebsite()">
+                        CHECK URL
+                    </button>
+
+                </div>
+
+                <div id="result"></div>
+
+                <div class="info">
+                    <div><span>✓</span> Machine Learning</div>
+                    <div><span>✓</span> Real-Time Detection</div>
+                    <div><span>✓</span> Continuous Monitoring</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        PhishGuard • MLOps-Based Phishing Website Detection System
+    </footer>
+
+    <script>
+
+    async function checkWebsite() {
+
+        const url = document.getElementById("url").value;
+        const result = document.getElementById("result");
+
+        if (url === "") {
+            result.style.color = "#ff6b6b";
+            result.innerText = "Please enter a website URL.";
+            return;
+        }
+
+        result.style.color = "#ffffff";
+        result.innerText = "Analyzing website...";
+
+        // 31 features required by the trained Random Forest model
+        const features = [
+    1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1
+];
+
+        try {
+
+            const response = await fetch("http://127.0.0.1:8000/predict", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    features: features
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.result === "Phishing Website") {
+                result.style.color = "#ff6b6b";
+                result.innerText = "⚠️ " + data.result;
+            } else {
+                result.style.color = "#00e6b8";
+                result.innerText = "✓ " + data.result;
+            }
+
+        } catch (error) {
+
+            result.style.color = "#ff6b6b";
+            result.innerText = "Unable to connect to the PhishGuard API.";
+
+        }
+    }
+
+</script>
+
+
+
+</body>
+</html>
